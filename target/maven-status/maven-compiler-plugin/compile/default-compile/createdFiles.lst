@@ -1,0 +1,13 @@
+com/polarbookshop/orderservice/order/domain/OrderRepository.class
+com/polarbookshop/orderservice/order/domain/Order.class
+META-INF/spring-configuration-metadata.json
+com/polarbookshop/orderservice/config/ClientProperties.class
+com/polarbookshop/orderservice/order/web/OrderController.class
+com/polarbookshop/orderservice/order/domain/OrderService.class
+com/polarbookshop/orderservice/order/domain/OrderStatus.class
+com/polarbookshop/orderservice/book/Book.class
+com/polarbookshop/orderservice/config/DataConfig.class
+com/polarbookshop/orderservice/OrderServiceApplication.class
+com/polarbookshop/orderservice/book/BookClient.class
+com/polarbookshop/orderservice/config/ClientConfig.class
+com/polarbookshop/orderservice/order/web/OrderRequest.class
