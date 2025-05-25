@@ -1,5 +1,5 @@
 server:
-  port: 9003
+  port: 9002
   shutdown: graceful
   netty:
     connection-timeout: 2s
@@ -11,8 +11,8 @@ spring:
   lifecycle:
     timeout-per-shutdown-phase: 15s
   r2dbc:
-    username: compose-postgres
-    password: compose-postgres
+    username: user
+    password: password
     url: r2dbc:postgresql://localhost:5432/polardb_order
     pool:
       max-create-connection-time: 2s
@@ -27,18 +27,18 @@ spring:
   cloud:
     function:
       definition: dispatchOrder
-    stream:
-      bindings: 
-         dispatchOrder-in-0: 
-            destination: order-dispatched
-            group: ${spring.application.name}
-         acceptOrder-out-0:
-            destination: order-accepted
-      rabbit:
-        bindings:
-          acceptOrder-out-0:
-            producer:
-              transacted: true
+#    stream:
+#      bindings: 
+#         dispatchOrder-in-0: 
+#            destination: order-dispatched
+#            group: ${spring.application.name}
+#         acceptOrder-out-0:
+#            destination: order-accepted
+#      rabbit:
+#        bindings:
+#          acceptOrder-out-0:
+#            producer:
+#              transacted: true
     config:
       uri: http://localhost:8888
       request-connect-timeout: 5000 # 5s
@@ -49,11 +49,11 @@ spring:
         initial-interval: 1000 # 1s
         max-interval: 2000 # 2s
         multiplier: 1.1
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: user
-    password: password
-    connection-timeout: 5s
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: user
+#    password: password
+#    connection-timeout: 5s
 polar:
-  catalog-service-uri: "http://localhost:9002"
+  catalog-service-uri: "http://localhost:9001"
