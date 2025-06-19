@@ -18,7 +18,7 @@ spec:
         - name: ghcr-login-secret
       containers:
         - name: catalog-service
-          image: ghcr.io/codingkiddo/catalog-service:latest
+          image: ghcr.io/codingkiddo/order-service:0.0.8-SNAPSHOT
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
