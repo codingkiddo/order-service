@@ -160,14 +160,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+                    <execution>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
+                </executions>
 				<configuration>
 					<image>
-						<name>ghcr.io/codingkiddo/order-service</name>
+						<env><BP_JVM_VERSION>17</BP_JVM_VERSION></env>
+						<name>ghcr.io/codingkiddo/order-service:${version}</name>
 					</image>
 					<docker>
 						<publishRegistry>
 							<username>codingkiddo</username>
-							<token>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</token>
+							<token>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</token>
 							<url>https://ghcr.io</url>
 						</publishRegistry>
 					</docker>
