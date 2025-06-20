@@ -17,7 +17,7 @@ spec:
       imagePullSecrets: 
         - name: dockerconfigjson-github-com
       containers:
-        - name: catalog-service
+        - name: order-service
           image: ghcr.io/codingkiddo/order-service:0.0.8-SNAPSHOT
           imagePullPolicy: IfNotPresent
           lifecycle:
@@ -29,17 +29,9 @@ spec:
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
-            - name: WAIT_HOSTS
-              value: config-service:8888
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
             - name: POLAR_CATALOG_SERVICE_URI
               value: http://catalog-service
-            - name: SPRING_DATASOURCE_USERNAME
-              value: user
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: password
-            - name: SPRING_R2DBC_URL
-              value: r2dbc:postgresql://polar-postgres/polardb_order
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://polar-postgres/polardb_catalog
