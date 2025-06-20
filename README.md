@@ -11,3 +11,7 @@ kubectl logs deployment/order-service
 
 kubectl apply -f k8s/deployment.yml
 kubectl delete -f k8s/deployment.yml
+
+
+
+docker buildx build --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag codingkiddo/order-service:0.0.8-SNAPSHOT .
