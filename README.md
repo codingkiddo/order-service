@@ -4,6 +4,7 @@ docker build --build-arg JAR_FILE=target/order-service-0.0.8-SNAPSHOT.jar -t ord
 
 
 docker tag order-service:0.0.8-SNAPSHOT ghcr.io/codingkiddo/order-service:0.0.8-SNAPSHOT
+
 docker push ghcr.io/codingkiddo/order-service:0.0.8-SNAPSHOT
 
 kubectl logs deployment/order-service
