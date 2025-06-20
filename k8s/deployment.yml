@@ -34,11 +34,11 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
             - name: POLAR_CATALOG_SERVICE_URI
-              value: http://catalog-service:9001
+              value: http://catalog-service
             - name: SPRING_DATASOURCE_USERNAME
-              value: compose-postgres
+              value: user
             - name: SPRING_DATASOURCE_PASSWORD
-              value: compose-postgres
+              value: password
             - name: SPRING_R2DBC_URL
               value: r2dbc:postgresql://polar-postgres/polardb_order
             - name: SPRING_DATASOURCE_URL
