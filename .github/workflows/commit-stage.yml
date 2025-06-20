@@ -6,7 +6,7 @@ on:
 env: 
   REGISTRY: ghcr.io
   IMAGE_NAME: codingkiddo/order-service
-  VERSION: latest
+  VERSION: 0.0.8-SNAPSHOT
 jobs:
   build:
     name: Build and Test
