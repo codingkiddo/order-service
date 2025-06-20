@@ -33,5 +33,11 @@ spec:
               value: http://config-service
             - name: POLAR_CATALOG_SERVICE_URI
               value: http://catalog-service
+            - name: SPRING_DATASOURCE_USERNAME
+              value: user
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://polar-postgres/polardb_catalog
+            - name: SPRING_PROFILES_ACTIVE
+              value: testdata
