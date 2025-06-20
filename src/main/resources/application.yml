@@ -13,7 +13,8 @@ spring:
   r2dbc:
     username: user
     password: password
-    url: r2dbc:postgresql://localhost:5432/polardb_order
+#    url: r2dbc:postgresql://localhost:5432/polardb_order
+    url: r2dbc:postgresql://${POSTGRES_HOST}:5432/polardb_order
     pool:
       max-create-connection-time: 2s
       initial-size: 5
@@ -21,7 +22,8 @@ spring:
   flyway:
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
-    url: jdbc:postgresql://localhost:5432/polardb_order
+#    url: jdbc:postgresql://localhost:5432/polardb_orde
+    url: jdbc:postgresql://${POSTGRES_HOST}:5432/polardb_catalog
   config:
     import: "optional:configserver:"
   cloud:
@@ -40,7 +42,8 @@ spring:
 #            producer:
 #              transacted: true
     config:
-      uri: http://localhost:8888
+#      uri: http://localhost:8888
+      uri: http://config-service:8888
       request-connect-timeout: 5000 # 5s
       request-read-timeout: 5000 # 5s
       fail-fast: false # In production, set to true
@@ -56,4 +59,5 @@ spring:
 #    password: password
 #    connection-timeout: 5s
 polar:
-  catalog-service-uri: "http://localhost:9001"
+#  catalog-service-uri: "http://localhost:9001"
+   catalog-service-uri: "http://catalog-service:9001"
