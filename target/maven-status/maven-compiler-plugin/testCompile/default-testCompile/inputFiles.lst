@@ -1,7 +1,0 @@
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/book/BookClientTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/order/web/OrderJsonTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/order/web/OrderControllerWebFluxTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/OrderServiceApplicationTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/order/web/OrderRequestJsonTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/order/domain/OrderRepositoryR2dbcTests.java
-/Users/vinodkumar/Documents/Technologies/Microservices/cloud-native-spring-in-action-final-code-workspace/order-service/src/test/java/com/polarbookshop/orderservice/order/web/OrderRequestValidationTests.java
