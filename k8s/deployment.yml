@@ -15,7 +15,7 @@ spec:
         app: order-service
     spec:
       imagePullSecrets: 
-        - name: ghcr-login-secret
+        - name: dockerconfigjson-github-com
       containers:
         - name: catalog-service
           image: ghcr.io/codingkiddo/order-service:0.0.8-SNAPSHOT
@@ -34,7 +34,7 @@ spec:
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
             - name: POLAR_CATALOG_SERVICE_URI
-              value: http://catalog-service:9002
+              value: http://catalog-service:9001
             - name: SPRING_DATASOURCE_USERNAME
               value: compose-postgres
             - name: SPRING_DATASOURCE_PASSWORD
@@ -45,18 +45,3 @@ spec:
               value: jdbc:postgresql://polar-postgres/polardb_catalog
             - name: SPRING_PROFILES_ACTIVE
               value: prod
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: order-service
-  labels:
-    app: order-service
-spec:
-  type: ClusterIP
-  selector:
-    app: order-service
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 9003
