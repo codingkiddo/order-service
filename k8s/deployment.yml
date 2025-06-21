@@ -29,6 +29,8 @@ spec:
           env:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
+            - name: WAIT_HOSTS
+              value: config-service:8888
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service:8888
             - name: POLAR_CATALOG_SERVICE_URI
