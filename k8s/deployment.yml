@@ -30,18 +30,25 @@ spec:
             - name: BPL_JVM_THREAD_COUNT
               value: "50"
             - name: SPRING_CLOUD_CONFIG_URI
-              value: http://config-service
+              value: http://config-service:8888
             - name: POLAR_CATALOG_SERVICE_URI
               value: http://catalog-service
-            - name: SPRING_DATASOURCE_USERNAME
-              value: user
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: password
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://polar-postgres/polardb_catalog
-            - name: SPRING_PROFILES_ACTIVE
-              value: testdata
             - name: SPRING_R2DBC_URL
-              value: r2dbc:postgresql://polar-postgres/polardb_order
+              value: r2dbc:postgresql://polar-postgres:5432/polardb_order
             - name: SPRING_FLYWAY_URL
-              value: jdbc:postgresql://polar-postgres/polardb_order
+              value: jdbc:postgresql://polar-postgres:5432/polardb_order
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  labels:
+    app: order-service
+spec:
+  type: NodePort
+  selector:
+    app: order-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9002
